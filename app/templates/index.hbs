@@ -1,0 +1,22 @@
+<div class="jumbo">
+  <div class="right"></div>
+  <h2>Welcome!</h2>
+  <p>
+    This simple app will help you browse the available Rentals.
+  </p>
+  <!--<div>
+    {{#link-to 'about' class="button"}}
+      About Us
+    {{/link-to}}
+  </div>-->
+</div>
+
+{{#list-filter
+   filter=(action 'filterByCity')
+   as |rentals|}}
+  <ul class="results">
+    {{#each rentals as |rentalUnit|}}
+      <li>{{rental-listing rental=rentalUnit}}</li>
+    {{/each}}
+  </ul>
+{{/list-filter}}
